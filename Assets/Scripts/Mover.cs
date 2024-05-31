@@ -3,6 +3,8 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    
+    private Vector3 _direction;
 
     private void FixedUpdate()
     {
@@ -11,11 +13,11 @@ public class Mover : MonoBehaviour
 
     public void SetDirection(Vector3 direction)
     {
-        transform.LookAt(transform.position + direction);
+        _direction = direction;
     }
 
     private void Move()
     {
-        transform.position += transform.forward * _speed * Time.fixedDeltaTime;
+        transform.position += _direction * _speed * Time.fixedDeltaTime;
     }
 }

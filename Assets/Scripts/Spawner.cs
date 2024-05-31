@@ -35,14 +35,14 @@ public class Spawner : MonoBehaviour
 
     private Vector3 GetRandomSpawnPosition()
     {
-        int randomPointIndex = UnityEngine.Random.Range(0, _spawnPoints.Count);
+        int randomPointIndex = Random.Range(0, _spawnPoints.Count);
         return _spawnPoints[randomPointIndex].transform.position; 
     }
 
     private Vector3 GetRandomDirection()
     {
         int maxAngle = 360;
-        float randomAngle = UnityEngine.Random.Range(0, maxAngle);
+        float randomAngle = Random.Range(0, maxAngle);
         return Quaternion.Euler(0, randomAngle, 0) * Vector3.forward;
     }
 }
